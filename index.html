@@ -363,7 +363,7 @@ footer a{margin:0 8px}
   const header = document.getElementById("header");
   const nav = document.getElementById("nav");
   const menuBtn = document.getElementById("menuBtn");
-  const baseTitle = "Tewabe Negash";
+  const baseTitle = "Tewabe Negash | Ethiopian Paleoanthropologist & Zooarchaeologist, Colorado State University";
 
   // Routing is driven by clicks, so it works in previews/sandboxed frames too.
   // The address bar is updated when allowed, so links stay shareable on the live site.
@@ -374,7 +374,7 @@ footer a{margin:0 8px}
     pages.forEach(p => p.classList.toggle("active", p === el));
     navLinks.forEach(a => { if (a.getAttribute("href") === "#" + page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
     heroTitle.textContent = el.dataset.title;
-    document.title = page === "welcome" ? baseTitle : el.dataset.title + " | " + baseTitle;
+    document.title = page === "welcome" ? baseTitle : el.dataset.title + " | Tewabe Negash";
     closeMenu();
     if (push) { try { history.pushState(null, "", "#" + page + (anchor ? "/" + anchor : "")); } catch (e) {} }
     const target = anchor && document.getElementById(anchor);
