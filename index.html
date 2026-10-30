@@ -133,6 +133,14 @@ ul.dots{padding-left:20px;margin:0}
 .cards{display:grid;gap:20px}
 .card{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:10px;padding:22px 24px}
 .card p{margin:6px 0 0;color:var(--muted)}
+.fig{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 6px}
+.fig figure{margin:0}
+.fig .frame{aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#000;border:1px solid var(--rule)}
+.fig img,.fig video{width:100%;height:100%;display:block;object-fit:contain}
+.fig .photo img{object-fit:cover;object-position:55% 35%}
+.fig figcaption{font-size:14px;line-height:1.45;color:var(--muted);margin-top:8px}
+.fig figcaption b{color:var(--accent);margin-right:4px}
+@media (max-width:700px){ .fig{grid-template-columns:1fr 1fr} .fig figure:first-child{grid-column:1/-1} .fig .photo{aspect-ratio:4/3} }
 .related{margin-top:12px;font-size:15px}
 .related span{font-weight:700;color:var(--heading);margin-right:6px}
 .related a{margin-right:12px;display:inline-block}
@@ -240,6 +248,12 @@ footer a{margin:0 8px}
     <article class="card">
       <h4>Actualistic Experiments</h4>
       <p>Using actualistic experiments, such as retouching stone tools with bone, to develop a quantitative method for identifying bone retoucher marks, and applying it to Early Stone Age archaeological sites in Africa.</p>
+      <div class="fig">
+        <figure><div class="frame photo"><img data-media="photo" alt="Tewabe Negash retouching a stone flake with a long bone during an actualistic experiment"></div><figcaption><b>A</b>Retouching a stone flake with a long bone during an actualistic experiment.</figcaption></figure>
+        <figure><div class="frame"><img data-media="scan" alt="3D surface model of an experimental bone retoucher mark, colored by surface height"></div><figcaption><b>B</b>3D surface model of an experimental retoucher mark. Color shows surface height in µm.</figcaption></figure>
+        <figure><div class="frame"><video data-media="video" autoplay muted loop playsinline controls aria-label="Rotating 3D view of an experimental bone retoucher mark"></video></div><figcaption><b>C</b>Rotating 3D view of an experimental retoucher mark.</figcaption></figure>
+      </div>
+      <script src="media/experiments.js" defer></script>
       <div class="related"><span>Related work:</span><a href="#publications/pres-retoucher-2025">2025 talk</a><a href="https://www.researchgate.net/publication/379431392_A_quantitative_analysis_of_the_micromorphology_of_marks_on_bone_retouchers_used_to_sharpen_lithics" target="_blank" rel="noopener">2024 poster (ResearchGate)</a></div>
     </article>
     <article class="card">
